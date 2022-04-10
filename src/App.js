@@ -6,6 +6,8 @@ import Order from './components/Order/Order.jsx';
 import Inventory from './components/Inventory/Inventory.jsx';
 import About from './components/About/About.jsx';
 import NotFound from './components/NotFound/NotFound.jsx';
+import Login from './components/Login/Login.jsx';
+import SignUp from './components/SignUp/SignUp.jsx';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path='/order' element={<Order></Order>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signUp' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
