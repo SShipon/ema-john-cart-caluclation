@@ -8,6 +8,8 @@ import About from './components/About/About.jsx';
 import NotFound from './components/NotFound/NotFound.jsx';
 import Login from './components/Login/Login.jsx';
 import SignUp from './components/SignUp/SignUp.jsx';
+import RequireAuth from './components/RequireAuth/RequireAuth.jsx';
+import Shipment from './components/Shipment/Shipment.jsx';
 
 function App() {
   return (
@@ -17,7 +19,16 @@ function App() {
         <Route path='/' element={<Shop></Shop>}></Route>
         <Route path='/shop' element={<Shop></Shop>}></Route>
         <Route path='/order' element={<Order></Order>}></Route>
-        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+        <Route path='/inventory' element={
+          <RequireAuth>
+            <Inventory></Inventory>
+        </RequireAuth>
+        }></Route>
+        <Route path='/shipment' element={
+          <RequireAuth>
+             <Shipment></Shipment>
+          </RequireAuth>
+        }></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signUp' element={<SignUp></SignUp>}></Route>
